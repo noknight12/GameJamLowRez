@@ -12,6 +12,7 @@ public class TurnManager : MonoBehaviour
     public BasicEnemyFight enemyFight;
     public GameObject actionMenu;
     public Transform player;
+    public CombatMove combatMove;
     void Start()
     {
         
@@ -35,6 +36,8 @@ public class TurnManager : MonoBehaviour
         actionMenu.SetActive(false);
         anim.Play("moveToBattle");
         StartEnemyAttack();
+        combatMove.slot = 2;
+        combatMove.inBattle = true;
     }
     public void StartEnemyAttack()
     {
@@ -49,8 +52,9 @@ public class TurnManager : MonoBehaviour
             player.position = Vector2.MoveTowards( player.position, transform.position, 0.015f);
             Invoke(nameof(movePlayerToRest), 0.01f);
             Rows.SetActive(false);
-            
+            actionMenu.SetActive(true);
         }
+        combatMove.inBattle = false;
     }
 
     IEnumerator DelayedAttack()

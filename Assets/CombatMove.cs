@@ -4,7 +4,8 @@ public class CombatMove : MonoBehaviour
 {
 
     float offset = 1.3f;
-    int slot = 2;
+    public int slot = 2;
+    public bool inBattle = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,9 +17,9 @@ public class CombatMove : MonoBehaviour
     void Update()
     {
 
-       
-        
-        if (Input.GetMouseButtonDown(0))
+
+
+        if (Input.GetMouseButtonDown(0) && inBattle == true) 
         {
             if (slot >= 1 && slot <= 4)
             {
@@ -48,6 +49,7 @@ public class CombatMove : MonoBehaviour
         {
             transform.position = new Vector2(transform.position.x - offset, transform.position.y);
             slot--;
+            Debug.Log(slot);
 
         }
     }
