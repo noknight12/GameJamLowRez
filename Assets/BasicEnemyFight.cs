@@ -4,6 +4,7 @@ public class BasicEnemyFight : MonoBehaviour
 {
 
     public GameObject[] attackOne;
+    public TurnManager turnManager;
     int count = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -40,7 +41,7 @@ public class BasicEnemyFight : MonoBehaviour
 
     void AttackOne()
     {
-        count ++;
+        count++;
         int randNum = Random.Range(0, 2);
         Instantiate(attackOne[randNum]);
         Debug.Log("hello");
@@ -53,6 +54,8 @@ public class BasicEnemyFight : MonoBehaviour
         else
         {
             count = 0; 
+            Invoke(nameof(moveRest), 3);
+            
         }
     }
 
@@ -64,5 +67,10 @@ public class BasicEnemyFight : MonoBehaviour
     void AttackThree()
     {
         Debug.Log("hi");
+    }
+
+    void moveRest()
+    {
+        turnManager.movePlayerToRest();
     }
 }

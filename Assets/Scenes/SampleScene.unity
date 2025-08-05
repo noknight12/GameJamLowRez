@@ -239,6 +239,7 @@ MonoBehaviour:
   attackOne:
   - {fileID: 6870774295161784148, guid: 25507e22d1291ca42a5124ba6b45d6ef, type: 3}
   - {fileID: 2609432238282502355, guid: c54bdfa7bf7f1924f87b90ab894a1645, type: 3}
+  turnManager: {fileID: 661419097}
 --- !u!212 &83327421
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -348,7 +349,7 @@ Transform:
   m_GameObject: {fileID: 416130875}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: -3.44, z: -0.28}
+  m_LocalPosition: {x: -0.01, y: -1.78, z: -0.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -748,7 +749,7 @@ Transform:
   m_GameObject: {fileID: 661419095}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5464666, y: 0.15073968, z: 0.013500148}
+  m_LocalPosition: {x: 0, y: -1.7, z: 0.013500148}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -772,6 +773,7 @@ MonoBehaviour:
   anim: {fileID: 416130878}
   enemyFight: {fileID: 83327420}
   actionMenu: {fileID: 897736858}
+  player: {fileID: 416130877}
 --- !u!1 &897736858
 GameObject:
   m_ObjectHideFlags: 0

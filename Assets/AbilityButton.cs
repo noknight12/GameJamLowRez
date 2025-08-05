@@ -18,6 +18,6 @@ public class AbilityButton : MonoBehaviour
 
     public void EnemyTurn()
     {
-        turnManager.StartEnemyAttack();
+        turnManager.PrepToBattle();
     }
 }
