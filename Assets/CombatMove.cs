@@ -23,7 +23,7 @@ public class CombatMove : MonoBehaviour
             if (slot >= 1 && slot <= 4)
             {
 
-                Debug.Log(Input.mousePosition.x);
+                
 
                 if (Input.mousePosition.x < Screen.width / 2)
                 {

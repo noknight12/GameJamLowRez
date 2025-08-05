@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class BasicEnemyFight : MonoBehaviour
 {
+
+    public GameObject[] attackOne;
+    int count = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,8 +18,8 @@ public class BasicEnemyFight : MonoBehaviour
     }
     public void ChooseAttack()
     {
-        int chosenAttack = Random.Range(1, 4);
-
+        //int chosenAttack = Random.Range(1, 4);
+        int chosenAttack = 1;
         switch (chosenAttack)
         {
             case 1:
@@ -37,7 +40,20 @@ public class BasicEnemyFight : MonoBehaviour
 
     void AttackOne()
     {
-        Debug.Log("hi");
+        count ++;
+        int randNum = Random.Range(0, 2);
+        Instantiate(attackOne[randNum]);
+        Debug.Log("hello");
+
+        if ( count < 3)
+        {
+            Invoke(nameof(AttackOne), 3);
+            
+        }
+        else
+        {
+            count = 0; 
+        }
     }
 
     void AttackTwo()
