@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class TurnManager : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class TurnManager : MonoBehaviour
     public Transform IdlePosition;
     public Transform Player;
     public Animator anim;
+    public BasicEnemyFight enemyFight;
+    public GameObject actionMenu;
     void Start()
     {
         
@@ -22,5 +25,17 @@ public class TurnManager : MonoBehaviour
             //play animation to move bro
             anim.Play("MoveToRestPlayer");
         }
+    }
+
+    public void StartEnemyAttack()
+    {
+        StartCoroutine(DelayedAttack());
+        actionMenu.SetActive(false);
+    }
+
+    IEnumerator DelayedAttack()
+    {
+        yield return new WaitForSeconds(3.0f);
+        enemyFight.ChooseAttack();
     }
 }

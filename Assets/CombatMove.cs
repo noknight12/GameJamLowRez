@@ -9,7 +9,7 @@ public class CombatMove : MonoBehaviour
     void Start()
     {
         Application.targetFrameRate = 30;
-        Debug.Log(Screen.width);
+        
     }
 
     // Update is called once per frame
@@ -33,7 +33,7 @@ public class CombatMove : MonoBehaviour
                 else if (Input.mousePosition.x > Screen.width / 2)
                 {
                     MoveRight();
-                    Debug.Log(Input.mousePosition.x + " " + Screen.width);
+                    
                 }
             }
         }
