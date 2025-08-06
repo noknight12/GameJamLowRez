@@ -340,6 +340,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7afd7984438f0fc4996ad4690c6d50ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slot: 2
+  inBattle: 0
 --- !u!4 &416130877
 Transform:
   m_ObjectHideFlags: 0
@@ -774,6 +776,7 @@ MonoBehaviour:
   enemyFight: {fileID: 83327420}
   actionMenu: {fileID: 897736858}
   player: {fileID: 416130877}
+  combatMove: {fileID: 416130876}
 --- !u!1 &897736858
 GameObject:
   m_ObjectHideFlags: 0
