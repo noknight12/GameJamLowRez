@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class AbilityButton : MonoBehaviour
+public class ItemButton : MonoBehaviour
 {
 
     public TurnManager turnManager;
@@ -16,7 +16,7 @@ public class AbilityButton : MonoBehaviour
         
     }
 
-    public void EnemyTurn()
+    public void IsPressed()
     {
         turnManager.PrepToBattle();
     }
