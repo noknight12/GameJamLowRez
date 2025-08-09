@@ -22,9 +22,24 @@ public class InventoryDisplay : MonoBehaviour
 
     }
 
-    void OnButtonClicked(Item item)
+    void ListAll()
     {
-        Debug.Log("Clicked: " + item);
-        // You can do more here
+
+
+    }
+
+    void ListItems()
+    {
+
+    }
+
+    void ListBuffs()
+    {
+
+    }
+
+    void ListAttacks()
+    {
+
     }
 }
