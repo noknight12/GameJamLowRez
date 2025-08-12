@@ -24,8 +24,13 @@ public abstract class EnemyTemplate : MonoBehaviour
 
     public abstract void Attack();
 
-    public void endTurn()
+    public void EndTurn()
     {
+        Invoke(nameof(NextTurn), 3);
+    }
 
+    void NextTurn()
+    {
+        turnManager.StartEnemyAttack();
     }
 }

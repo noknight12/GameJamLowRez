@@ -22,6 +22,8 @@ public class TurnManager : MonoBehaviour
     [SerializeField]
     private CombatMove combatMove;
 
+    private int count = 0;
+
     List<EnemyTemplate> enemyTemplates = new List<EnemyTemplate>();
     void Start()
     {
@@ -53,6 +55,7 @@ public class TurnManager : MonoBehaviour
 
    public void PrepToBattle()
     {
+        count = enemyTemplates.Count - 1;
         Rows.SetActive(true);
         actionMenu.SetActive(false);
         anim.Play("moveToBattle");
@@ -62,8 +65,19 @@ public class TurnManager : MonoBehaviour
     }
     public void StartEnemyAttack()
     {
-        StartCoroutine(DelayedAttack());
-        
+        if (enemyTemplates.Count > 0)
+        {
+            if (count > 0)
+            {
+                enemyTemplates[count].Attack();
+                count--;
+            }
+            else
+            {
+                StartPlayerTurn();
+            }
+        }
+       
     }
 
     public void MovePlayerToRest()
@@ -89,4 +103,6 @@ public class TurnManager : MonoBehaviour
         MovePlayerToRest();
         actionMenu.SetActive(true);
     }
+
+
 }
