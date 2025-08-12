@@ -67,7 +67,7 @@ public class TurnManager : MonoBehaviour
     {
         if (enemyTemplates.Count > 0)
         {
-            if (count > 0)
+            if (count >= 0)
             {
                 enemyTemplates[count].Attack();
                 count--;
