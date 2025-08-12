@@ -71,6 +71,6 @@ public class BasicEnemyFight : MonoBehaviour
 
     void moveRest()
     {
-        turnManager.movePlayerToRest();
+        turnManager.MovePlayerToRest();
     }
 }

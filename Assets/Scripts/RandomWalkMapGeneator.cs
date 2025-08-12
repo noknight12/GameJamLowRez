@@ -4,10 +4,9 @@ using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class RandomWalkMapGeneator : MonoBehaviour
+public class RandomWalkMapGeneator : AbstractDunegeonGen
 {
-    [SerializeField]
-    protected Vector2Int startPosition = Vector2Int.zero;
+    
 
     [SerializeField]
     private int iterations = 10;
@@ -16,10 +15,10 @@ public class RandomWalkMapGeneator : MonoBehaviour
     [SerializeField]
     public bool startRandomlyEachIteration = true;
 
-    [SerializeField]
-    private TileMapVisualizer tileMapVisualizer;
+    
+    
 
-    public void RunProceduralGeneration()
+    protected override void RunProceduralGeneration()
     {
         HashSet<Vector2Int> floorPositions = RunRandomWalk();
         tileMapVisualizer.Clear();
@@ -41,4 +40,6 @@ public class RandomWalkMapGeneator : MonoBehaviour
         }
         return floorPositions;
     }
+
+   
 }
