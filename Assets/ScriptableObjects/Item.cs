@@ -6,5 +6,5 @@ public class Item : ScriptableObject
     public string itemName;
     public string description;
     public Sprite itemIcon;
-    int amount = 0;
+    public int amount = 0;
 }
