@@ -2,6 +2,7 @@ using UnityEngine;
 
 public abstract class EnemyTemplate : MonoBehaviour
 {
+    public string enemyName;
     [SerializeField]
     int health = 100;
     [SerializeField]

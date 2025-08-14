@@ -6,7 +6,7 @@ public class Ability : ScriptableObject
     [SerializeField]
     public int stat;
     [SerializeField]
-    string abilityName;
+    public string abilityName;
     [SerializeField]
     AnimationClip clip;
     [SerializeField]

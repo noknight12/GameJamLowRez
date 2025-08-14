@@ -1,10 +1,7 @@
 using UnityEngine;
-using System;
-using System.Collections.Generic;
-public class Inventory : MonoBehaviour
+
+public class DefenseButton : MonoBehaviour
 {
-    public List<Item> items;
-    public List<Ability> abilities;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
