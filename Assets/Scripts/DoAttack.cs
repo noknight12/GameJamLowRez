@@ -1,10 +1,7 @@
 using UnityEngine;
 
-public class EnemyCluster : MonoBehaviour
+public class DoAttack : MonoBehaviour
 {
-    
-    public EnemyMove[] enemies;
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

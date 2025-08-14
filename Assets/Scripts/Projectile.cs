@@ -30,8 +30,7 @@ public class Projectile : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             playerHealth = collision.GetComponent<PlayerHealth>();
-            playerHealth.health -= damage;
-            Debug.Log("hurt");
+            playerHealth.TakeDamage(damage);
         }
     }
 }

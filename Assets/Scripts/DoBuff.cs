@@ -1,16 +1,10 @@
 using UnityEngine;
 
-public class DoBuff : MonoBehaviour
+public abstract class DoBuff : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public abstract int DmgModifier(int baseDamage);
+    public abstract int DefenseModifier(int baseDefense);
+    public abstract int HealModifier(int baseHeal);
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  
 }

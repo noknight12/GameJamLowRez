@@ -1,10 +1,9 @@
 using UnityEngine;
 
-public class EnemyCluster : MonoBehaviour
+public abstract class DoAbility : MonoBehaviour
 {
-    
-    public EnemyMove[] enemies;
-
+    Animation anim;
+    public abstract void PlayAbility(AnimationClip clip);
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

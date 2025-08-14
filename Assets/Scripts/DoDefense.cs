@@ -1,10 +1,11 @@
 using UnityEngine;
 
-public class EnemyCluster : MonoBehaviour
+public class DoDefense : MonoBehaviour
 {
-    
-    public EnemyMove[] enemies;
-
+    [SerializeField]
+    PlayerHealth health;
+    [SerializeField]
+    TurnManager turnManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

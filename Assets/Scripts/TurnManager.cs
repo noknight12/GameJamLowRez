@@ -21,8 +21,12 @@ public class TurnManager : MonoBehaviour
     private Transform player;
     [SerializeField]
     private CombatMove combatMove;
+    [SerializeField]
+    EnemyFiller enemyFiller;    
 
-    private int count = 0;
+    private int enemyCount = 0;
+
+    public int turnCount = 0;
 
     List<EnemyTemplate> enemyTemplates = new List<EnemyTemplate>();
     void Start()
@@ -55,7 +59,7 @@ public class TurnManager : MonoBehaviour
 
    public void PrepToBattle()
     {
-        count = enemyTemplates.Count - 1;
+        enemyCount = enemyTemplates.Count - 1;
         Rows.SetActive(true);
         actionMenu.SetActive(false);
         anim.Play("moveToBattle");
@@ -67,10 +71,10 @@ public class TurnManager : MonoBehaviour
     {
         if (enemyTemplates.Count > 0)
         {
-            if (count >= 0)
+            if (enemyCount >= 0)
             {
-                enemyTemplates[count].Attack();
-                count--;
+                enemyTemplates[enemyCount].Attack();
+                enemyCount--;
             }
             else
             {
@@ -100,9 +104,14 @@ public class TurnManager : MonoBehaviour
 
     public void StartPlayerTurn()
     {
+        turnCount++;
         MovePlayerToRest();
         actionMenu.SetActive(true);
     }
 
-
+    public void StartCombat()
+    {
+        //fill enamies
+        turnCount = 0;
+    }
 }
