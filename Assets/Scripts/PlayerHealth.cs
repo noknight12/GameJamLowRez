@@ -7,9 +7,13 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField]
     float maxHealth = 100.0f;
     [SerializeField]
-    int defense = 0;
+    public float defense = 0;
     [SerializeField]
     private GameObject Scene;
+
+    public int baseDef = 0;
+
+    int defenseCountDown = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -38,7 +42,19 @@ public class PlayerHealth : MonoBehaviour
         defPercent = 1 - defPercent;
         float resultDmg =  damage * defPercent;
         health -= resultDmg;
+        defenseCountDown--;
+        if (defenseCountDown <= 0)
+        {
+            ResetDef();
+            defenseCountDown = 0;
+        }
     }
 
-    
+
+    public void ResetDef()
+    {
+        defense = baseDef;
+    }
+
+
 }

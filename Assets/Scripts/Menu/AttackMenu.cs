@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Net.Mail;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,8 +18,12 @@ public class AttackMenu : MonoBehaviour
     [SerializeField]
     private DoAttack doAttack;
 
-    
-    
+
+    [SerializeField]
+    private GameObject targetMenu;
+
+
+
     // The Panel with VerticalLayoutGroup
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -40,6 +45,11 @@ public class AttackMenu : MonoBehaviour
     {
         Debug.Log("Clicked: ");
         doAttack.chosenAttack = attack;
+
+        //display target menu
+        targetMenu.SetActive(true);
+        this.gameObject.SetActive(false);
         // You can do more here
     }
+
 }

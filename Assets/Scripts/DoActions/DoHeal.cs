@@ -7,7 +7,9 @@ public class DoHeal : MonoBehaviour
     PlayerHealth health;
 
     [HideInInspector]
-    public int healAmount;
+    public Heal heal;
+
+    private ApplyBuff applyBuff;
 
     void Start()
     {
@@ -21,6 +23,7 @@ public class DoHeal : MonoBehaviour
     }
     public void Heal()
     {
-        health.health += healAmount;
+        applyBuff = GetComponent<ApplyBuff>();
+        health.health += applyBuff.Apply(heal);
     }
 }

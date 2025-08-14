@@ -4,7 +4,7 @@ public abstract class EnemyTemplate : MonoBehaviour
 {
     public string enemyName;
     [SerializeField]
-    int health = 100;
+    float health = 100;
     [SerializeField]
     TurnManager turnManager;
     [SerializeField]
@@ -14,7 +14,7 @@ public abstract class EnemyTemplate : MonoBehaviour
         GameObject turnManagerOBJ = GameObject.FindGameObjectWithTag("TurnManager");
         turnManager = turnManagerOBJ.GetComponent<TurnManager>();
     }
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         health -= damage;
         if (health <= 0 )

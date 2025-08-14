@@ -6,6 +6,8 @@ public class DoAttack : MonoBehaviour
     public Attack chosenAttack;
     [HideInInspector]
     public EnemyTemplate chosenTarget;
+
+    private ApplyBuff applyBuff;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,5 +18,11 @@ public class DoAttack : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void Attack()
+    {
+        applyBuff = GetComponent<ApplyBuff>();
+        chosenTarget.TakeDamage(applyBuff.Apply(chosenAttack));
     }
 }

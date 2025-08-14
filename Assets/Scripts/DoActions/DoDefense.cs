@@ -6,15 +6,16 @@ public class DoDefense : MonoBehaviour
     PlayerHealth health;
     [SerializeField]
     TurnManager turnManager;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [HideInInspector]
+    public Defense chosenDefense;
+  
 
-    // Update is called once per frame
-    void Update()
+    private ApplyBuff applyBuff;
+   
+    public void Defend()
     {
+        applyBuff = GetComponent<ApplyBuff>();
+        health.defense = applyBuff.Apply(chosenDefense);
         
     }
 }
