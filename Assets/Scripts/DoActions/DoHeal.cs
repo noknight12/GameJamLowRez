@@ -6,6 +6,7 @@ public class DoHeal : MonoBehaviour
     [SerializeField]
     PlayerHealth health;
 
+    [HideInInspector]
     public int healAmount;
 
     void Start()

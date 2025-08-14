@@ -5,28 +5,42 @@ using UnityEngine;
 public class TurnManager : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    //board management
+    [Header("Board Management")]
     [SerializeField]
     private GameObject Rows;
-    [SerializeField]
-    private Transform IdlePosition;
-    [SerializeField]
-    private Transform Player;
-    [SerializeField]
-    private Animator anim;
-    [SerializeField]
-    private BasicEnemyFight enemyFight;
+    public int turnCount = 0;
+
+    //menu management
+    [Header("Menu Management")]
     [SerializeField]
     private GameObject actionMenu;
+
+    [Header("To be depracated")]
+    [SerializeField]
+    private BasicEnemyFight enemyFight;
+
+
+    //player variables
+    [Header("Player Variables")]
     [SerializeField]
     private Transform player;
     [SerializeField]
+    private Transform IdlePosition;
+    [SerializeField]
     private CombatMove combatMove;
     [SerializeField]
-    EnemyFiller enemyFiller;    
+    private Animator anim;
 
+    [Header("Enemy Variables")]
+    //enemy variables
+    [SerializeField]
+    EnemyFiller enemyFiller;   
+    [SerializeField]
+    EnemyCluster enemyCluster;
     private int enemyCount = 0;
 
-    public int turnCount = 0;
+    
 
     List<EnemyTemplate> enemyTemplates = new List<EnemyTemplate>();
     void Start()

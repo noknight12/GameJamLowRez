@@ -2,16 +2,19 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    [HideInInspector]
     public float health = 100.0f;
-    public float maxHealth = 100.0f;
+    [SerializeField]
+    float maxHealth = 100.0f;
     [SerializeField]
     int defense = 0;
-    public GameObject Scene;
+    [SerializeField]
+    private GameObject Scene;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        health = maxHealth;
     }
 
     // Update is called once per frame
