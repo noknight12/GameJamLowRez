@@ -13,7 +13,7 @@ public class PlayerHealth : MonoBehaviour
 
     public int baseDef = 0;
 
-    int defenseCountDown = 0;
+    public int defenseCountDown = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

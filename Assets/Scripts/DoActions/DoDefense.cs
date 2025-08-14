@@ -16,6 +16,6 @@ public class DoDefense : MonoBehaviour
     {
         applyBuff = GetComponent<ApplyBuff>();
         health.defense = applyBuff.Apply(chosenDefense);
-        
+        health.defenseCountDown = chosenDefense.countDown;
     }
 }
