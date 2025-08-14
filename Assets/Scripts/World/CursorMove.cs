@@ -22,7 +22,7 @@ public class CursorMove : MonoBehaviour
         if (playerCoord != mouseCoords)
         {
             Vector2 Dir = mouseCoords - playerCoord;
-            transform.position = Vector2.MoveTowards(playerCoord,mouseCoords, 0.02f);
+            transform.position = Vector2.MoveTowards(playerCoord,mouseCoords, 0.05f);
         }
     }
 }

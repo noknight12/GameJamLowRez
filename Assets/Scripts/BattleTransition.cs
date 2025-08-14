@@ -3,6 +3,10 @@ using UnityEngine.SceneManagement;
 
 public class BattleTransition : MonoBehaviour
 {
+    [SerializeField]
+    GameObject mainCam;
+    [SerializeField]
+    GameObject battleCam;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,6 +21,8 @@ public class BattleTransition : MonoBehaviour
 
     public void GoToBattle()
     {
-        SceneManager.LoadScene("SampleScene");
+        //cam switch
+        mainCam.SetActive(false);
+        battleCam.SetActive(true);
     }
 }

@@ -18,7 +18,7 @@ public class EnemyMove : MonoBehaviour
     {
         if ( Vector2.Distance(transform.position, player.position) > 2)
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, 0.015f);
+            transform.position = Vector2.MoveTowards(transform.position, player.position, 0.03f);
         }
         else 
         {
