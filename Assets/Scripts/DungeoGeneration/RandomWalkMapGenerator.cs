@@ -4,26 +4,22 @@ using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class RandomWalkMapGeneator : AbstractDunegeonGen
+public class RandomWalkMapGenerator : AbstractDunegeonGen
 {
 
     
     [SerializeField]
     private SimpleRandomWalkSO randomWalkParameters;
-    
-
-    
-    
 
     protected override void RunProceduralGeneration()
     {
-        HashSet<Vector2Int> floorPositions = RunRandomWalk();
+        HashSet<Vector2Int> floorPositions = RunRandomWalk(randomWalkParameters);
         tileMapVisualizer.Clear();
         tileMapVisualizer.PaintFloorTiles(floorPositions);
-      
+        WallGenerator.CreateWalls(floorPositions, tileMapVisualizer);
     }
 
-    protected HashSet<Vector2Int> RunRandomWalk()
+    protected HashSet<Vector2Int> RunRandomWalk(SimpleRandomWalkSO parameters)
     {
         var currentPosition = startPosition;
         HashSet<Vector2Int> floorPositions = new HashSet<Vector2Int>();
