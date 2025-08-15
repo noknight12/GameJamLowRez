@@ -3,7 +3,7 @@ using UnityEngine;
 public class CursorMove : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-
+    
     Vector2 mouseCoords;
     void Start()
     {
