@@ -35,9 +35,9 @@ public class TurnManager : MonoBehaviour
     [Header("Enemy Variables")]
     //enemy variables
     [SerializeField]
-    EnemyFiller enemyFiller;   
-    [SerializeField]
-    EnemyCluster enemyCluster;
+    EnemyFiller enemyFiller;
+    [HideInInspector]
+    public EnemyCluster enemyCluster;
     private int enemyCount = 0;
 
     

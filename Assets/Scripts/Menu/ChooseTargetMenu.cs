@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class ChooseTargetMenu : MonoBehaviour
 {
     List<EnemyTemplate> enemies;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+  
     
 
     [SerializeField]
