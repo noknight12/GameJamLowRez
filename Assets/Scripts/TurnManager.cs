@@ -39,10 +39,8 @@ public class TurnManager : MonoBehaviour
     [HideInInspector]
     public EnemyCluster enemyCluster;
     private int enemyCount = 0;
-
-    
-
-    List<EnemyTemplate> enemyTemplates = new List<EnemyTemplate>();
+    [HideInInspector]
+    public List<EnemyTemplate> enemyTemplates = new List<EnemyTemplate>();
     void Start()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");

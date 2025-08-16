@@ -7,8 +7,9 @@ using UnityEngine.UI;
 public class ChooseTargetMenu : MonoBehaviour
 {
     List<EnemyTemplate> enemies;
-  
-    
+
+    [SerializeField]
+    TurnManager turnManager;
 
     [SerializeField]
     private GameObject buttonPrefab;       // Assign your Button prefab in Inspector
@@ -19,6 +20,7 @@ public class ChooseTargetMenu : MonoBehaviour
     private DoAttack doAttack;
     void Start()
     {
+        enemies = turnManager.enemyTemplates;
                 foreach (EnemyTemplate enemy in enemies)
                 {
                     GameObject newButton = Instantiate(buttonPrefab, buttonParent);

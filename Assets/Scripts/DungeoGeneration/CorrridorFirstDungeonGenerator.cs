@@ -34,13 +34,31 @@ public class CorrridorFirstDungeonGenerator : RandomWalkMapGenerator
 
         for (int i = 0; i < corridors.Count; i++)
         {
-            corridors[i] = IncreaseCorridorsSizeByOne(corridors[i]);
+            //corridors[i] = IncreaseCorridorsSizeByOne(corridors[i]);
+            corridors[i] = IncreaseCorridorBrush3By3(corridors[i]);
             floorPositions.UnionWith(corridors[i]);
-            //corridors = IncreaseCorridorBrushBy3(corridors);
+            
         }
         
         tileMapVisualizer.PaintFloorTiles(floorPositions);
         WallGenerator.CreateWalls(floorPositions, tileMapVisualizer);
+    }
+
+    private List<Vector2Int> IncreaseCorridorBrush3By3(List<Vector2Int> corridor)
+    {
+      List<Vector2Int> newCorridor = new List<Vector2Int>();
+        for (int i = 1;  i < corridor.Count; i++)
+        {
+            for (int x = -1; x < 2; x++) 
+            {
+                for (int y = -1; y < 2; y++)
+                {
+                    newCorridor.Add(corridor[i - 1] + new Vector2Int(x, y));
+                }
+
+            }
+        }
+        return newCorridor;
     }
 
     private List<Vector2Int> IncreaseCorridorsSizeByOne(List<Vector2Int> corridor)
@@ -55,7 +73,7 @@ public class CorrridorFirstDungeonGenerator : RandomWalkMapGenerator
                 //handle corner
                 for (int x = -1; x < 2; x++)
                 {
-                    for (int y = -1; x < 2; y++)
+                    for (int y = -1; y < 2; y++)
                     {
                         newCorridor.Add(corridor[i - 1] + new Vector2Int(x, y));
                     }
