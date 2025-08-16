@@ -10,6 +10,7 @@ public static class WallGenerator
         foreach (var position in basicWallPositions)
         {
             tilemapVisualizer.PaintSingleBasicWall(position);
+            
         }
     }
 
@@ -23,7 +24,7 @@ public static class WallGenerator
                 var neighbourPosition = position + direction;
                 if (floorPositions.Contains(neighbourPosition) == false)
                 {
-                    wallPositions.Add(neighbourPosition);
+                    wallPositions.Add(neighbourPosition); 
                 }
             }
         }
