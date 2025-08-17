@@ -12,11 +12,15 @@ public class Knight : EnemyTemplate
     GameObject pierce;
 
     [SerializeField]
+    GameObject goblin;
+
+    [SerializeField]
     Animator anim;
     public override void Attack()
     {
         int randAttack = Random.Range(0, 3);
         Debug.Log("it works :D");
+        anim.Play("KnightComboOne");
         /*
         switch (randAttack)
         { 
@@ -34,21 +38,21 @@ public class Knight : EnemyTemplate
         }
         */
 
-        EndTurn();
+        //EndTurn();
     }
 
    public void SpawnThreeSlash()
    {
-       Instantiate(threeSlash);
+       Instantiate(threeSlash, transform.position, Quaternion.identity);
    }
 
    public void SpawnTwoSlash()
    {
-       Instantiate(twoSlash);
+       Instantiate(twoSlash, transform.position, Quaternion.identity);
    }
-   public void SpawnPierce()
+   public void SpawnGoblin()
    {
-       Instantiate(pierce);
+       Instantiate(pierce, transform.position, Quaternion.identity);
    }
 
 }

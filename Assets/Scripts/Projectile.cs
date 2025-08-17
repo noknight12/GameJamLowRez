@@ -4,20 +4,21 @@ public class Projectile : MonoBehaviour
 {
     PlayerHealth playerHealth;
     public int damage = 50;
-    public GameObject scene;
+   
+    public float speed;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Invoke(nameof(Delete), 4);
-        scene = GameObject.FindWithTag("Scene");
-        this.transform.SetParent(scene.transform);
+        
+        
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.down * 0.1f);
+        transform.Translate(Vector2.down * speed * Time.deltaTime) ;
     }
 
     public void Delete()
