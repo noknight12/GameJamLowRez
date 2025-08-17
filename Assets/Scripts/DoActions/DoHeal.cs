@@ -15,5 +15,6 @@ public class DoHeal : MonoBehaviour
     {
         applyBuff = GetComponent<ApplyBuff>();
         health.health += applyBuff.Apply(heal);
+        health.healthBar.SetHealth(health.health);
     }
 }

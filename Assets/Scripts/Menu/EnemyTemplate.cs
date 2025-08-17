@@ -11,6 +11,8 @@ public abstract class EnemyTemplate : MonoBehaviour
     TurnManager turnManager;
     [SerializeField]
     Animator animator;
+
+    public HealthBar healthBar;
     private void Awake()
     {
         GameObject turnManagerOBJ = GameObject.FindGameObjectWithTag("TurnManager");
@@ -19,9 +21,10 @@ public abstract class EnemyTemplate : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
+        healthBar.SetHealth(health);
         if (health <= 0 )
         {
-
+            //win game
         }
     }
 
@@ -35,5 +38,10 @@ public abstract class EnemyTemplate : MonoBehaviour
     void NextTurn()
     {
         turnManager.StartEnemyAttack();
+    }
+
+    private void Start()
+    {
+        healthBar.SetMaxHealth(health);
     }
 }

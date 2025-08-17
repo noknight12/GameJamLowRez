@@ -26,6 +26,6 @@ public class DoAttack : MonoBehaviour
     {
         animator.Play(chosenAttack.animName);
         applyBuff = GetComponent<ApplyBuff>();
-        chosenTarget.TakeDamage(applyBuff.Apply(chosenAttack));
+        chosenTarget.TakeDamage(chosenAttack.stat);
     }
 }
