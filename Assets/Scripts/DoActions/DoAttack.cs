@@ -2,12 +2,14 @@ using UnityEngine;
 
 public class DoAttack : MonoBehaviour
 {
-    [HideInInspector]
+    //[HideInInspector]
     public Attack chosenAttack;
     [HideInInspector]
-    public EnemyTemplate chosenTarget;
+    
 
     private ApplyBuff applyBuff;
+
+    public Animator animator;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,8 +22,9 @@ public class DoAttack : MonoBehaviour
         
     }
 
-    public void Attack()
+    public void Attack(EnemyTemplate chosenTarget)
     {
+        animator.Play(chosenAttack.animName);
         applyBuff = GetComponent<ApplyBuff>();
         chosenTarget.TakeDamage(applyBuff.Apply(chosenAttack));
     }

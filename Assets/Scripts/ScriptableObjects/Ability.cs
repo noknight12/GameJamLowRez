@@ -8,7 +8,7 @@ public class Ability : ScriptableObject
     [SerializeField]
     public string abilityName;
     [SerializeField]
-    string animName;
+    public string animName;
     [SerializeField]
     public Sprite icon;
 }

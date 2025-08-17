@@ -15,7 +15,7 @@ public class ChooseTargetMenu : MonoBehaviour
     private GameObject buttonPrefab;       // Assign your Button prefab in Inspector
     [SerializeField]
     private Transform buttonParent;
-
+    public EnemyTemplate EnemyTemplate;
     [SerializeField]
     private DoAttack doAttack;
     void Start()
@@ -34,8 +34,10 @@ public class ChooseTargetMenu : MonoBehaviour
 
     void ApplyAttackTarget(EnemyTemplate enemy)
     {
-        Debug.Log("Clicked: ");
-        doAttack.chosenTarget = enemy;
+        Debug.Log("hi");
+        EnemyTemplate = enemy;
+        doAttack.Attack(enemy);
+        this.gameObject.SetActive(false);
         // You can do more here
     }
 }
