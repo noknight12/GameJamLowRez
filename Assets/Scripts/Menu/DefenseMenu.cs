@@ -28,7 +28,7 @@ public class DefenseMenu : MonoBehaviour
         foreach (Defense defense in abilities)
         {
             GameObject newButton = Instantiate(buttonPrefab, buttonParent);
-            newButton.GetComponentInChildren<TextMeshProUGUI>().text = defense.abilityName;
+            newButton.GetComponentInChildren<Image>().sprite = defense.icon;
 
             // Optional: Add click event
             newButton.GetComponent<Button>().onClick.AddListener(() => OnButtonClicked(defense));

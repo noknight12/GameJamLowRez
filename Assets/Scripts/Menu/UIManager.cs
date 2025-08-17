@@ -45,15 +45,27 @@ public class UIManager : MonoBehaviour
     }
 
    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void ReturnToAttack()
     {
-        
+        attackMenu.SetActive(true);
+        targetMenu.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ReturnFromDefense()
     {
-        
+        defenseMenu.SetActive(false);
+        abilityMenu.SetActive(true);
+    }
+
+    public void ReturnFromHeal()
+    {
+        healMenu.SetActive(false);
+        abilityMenu.SetActive(true);
+    }
+
+    public void ReturnFromAttack()
+    {
+        attackMenu.SetActive(false);
+        abilityMenu.SetActive(true);
     }
 }

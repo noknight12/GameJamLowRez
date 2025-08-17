@@ -32,7 +32,7 @@ public class AttackMenu : MonoBehaviour
         foreach (Attack attack in abilities) 
         {
             GameObject newButton = Instantiate(buttonPrefab, buttonParent);
-            newButton.GetComponentInChildren<TextMeshProUGUI>().text = attack.abilityName;
+            newButton.transform.Find("AbilityIcon").GetComponent<Image>().sprite = attack.icon;
 
             // Optional: Add click event
             newButton.GetComponent<Button>().onClick.AddListener(() => OnButtonClicked(attack));

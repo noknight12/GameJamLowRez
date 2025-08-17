@@ -124,6 +124,7 @@ public class TurnManager : MonoBehaviour
     public void StartCombat()
     {
         //fill enamies
+        enemyFiller.FillEnemies(enemyCluster);
         turnCount = 0;
     }
 }

@@ -24,7 +24,7 @@ public class ChooseTargetMenu : MonoBehaviour
                 foreach (EnemyTemplate enemy in enemies)
                 {
                     GameObject newButton = Instantiate(buttonPrefab, buttonParent);
-                    newButton.GetComponentInChildren<TextMeshProUGUI>().text = enemy.enemyName;
+                    newButton.GetComponentInChildren<Image>().sprite = enemy.enmyIcon;
 
                     // Optional: Add click event
                     newButton.GetComponent<Button>().onClick.AddListener(() => ApplyAttackTarget(enemy));

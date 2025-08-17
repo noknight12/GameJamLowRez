@@ -8,7 +8,7 @@ public class Ability : ScriptableObject
     [SerializeField]
     public string abilityName;
     [SerializeField]
-    AnimationClip clip;
+    string animName;
     [SerializeField]
-    GameObject button;
+    public Sprite icon;
 }

@@ -27,7 +27,7 @@ public class HealMenu : MonoBehaviour
         foreach (Heal heal in abilities)
         {
             GameObject newButton = Instantiate(buttonPrefab, buttonParent);
-            newButton.GetComponentInChildren<TextMeshProUGUI>().text = heal.abilityName;
+            newButton.GetComponentInChildren<Image>().sprite = heal.icon;
 
            
             newButton.GetComponent<Button>().onClick.AddListener(() => OnButtonClicked(heal));
