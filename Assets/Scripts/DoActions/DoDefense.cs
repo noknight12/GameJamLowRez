@@ -6,16 +6,15 @@ public class DoDefense : MonoBehaviour
     PlayerHealth health;
     [SerializeField]
     TurnManager turnManager;
-    [HideInInspector]
-    public Defense chosenDefense;
+   
   
 
     private ApplyBuff applyBuff;
    
-    public void Defend()
+    public void Defend(Defense defense)
     {
         applyBuff = GetComponent<ApplyBuff>();
-        health.defense = applyBuff.Apply(chosenDefense);
-        health.defenseCountDown = chosenDefense.countDown;
+        health.defense = applyBuff.Apply(defense);
+        health.defenseCountDown = defense.countDown;
     }
 }

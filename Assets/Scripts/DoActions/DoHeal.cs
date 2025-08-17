@@ -11,16 +11,7 @@ public class DoHeal : MonoBehaviour
 
     private ApplyBuff applyBuff;
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  
     public void Heal()
     {
         applyBuff = GetComponent<ApplyBuff>();

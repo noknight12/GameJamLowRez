@@ -1,9 +1,8 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class DefenseMenu : MonoBehaviour
+public class HealMenu : MonoBehaviour
 {
     [SerializeField]
     private Inventory inventory;
@@ -42,8 +41,8 @@ public class DefenseMenu : MonoBehaviour
         Debug.Log("Defend :D");
         doDefense.Defend(defense);
 
-      //hide this menu
+        //hide this menu
         this.gameObject.SetActive(false);
-     
+
     }
 }
