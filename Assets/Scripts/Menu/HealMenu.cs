@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealMenu : MonoBehaviour
 {
@@ -14,32 +15,31 @@ public class HealMenu : MonoBehaviour
     public Transform buttonParent;
 
     [SerializeField]
-    private DoDefense doDefense;
+    private DoHeal doHeal;
 
 
 
 
-    // The Panel with VerticalLayoutGroup
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+   
     void Start()
     {
         abilities = inventory.abilities;
-        foreach (Defense defense in abilities)
+        foreach (Heal heal in abilities)
         {
             GameObject newButton = Instantiate(buttonPrefab, buttonParent);
-            newButton.GetComponentInChildren<TextMeshProUGUI>().text = defense.abilityName;
+            newButton.GetComponentInChildren<TextMeshProUGUI>().text = heal.abilityName;
 
-            // Optional: Add click event
-            newButton.GetComponent<Button>().onClick.AddListener(() => OnButtonClicked(defense));
+           
+            newButton.GetComponent<Button>().onClick.AddListener(() => OnButtonClicked(heal));
 
         }
 
     }
 
-    void OnButtonClicked(Defense defense)
+    void OnButtonClicked(Heal heal)
     {
         Debug.Log("Defend :D");
-        doDefense.Defend(defense);
+        doHeal.Heal(heal);
 
         //hide this menu
         this.gameObject.SetActive(false);

@@ -6,13 +6,12 @@ public class DoHeal : MonoBehaviour
     [SerializeField]
     PlayerHealth health;
 
-    [HideInInspector]
-    public Heal heal;
+ 
 
     private ApplyBuff applyBuff;
 
   
-    public void Heal()
+    public void Heal(Heal heal)
     {
         applyBuff = GetComponent<ApplyBuff>();
         health.health += applyBuff.Apply(heal);
