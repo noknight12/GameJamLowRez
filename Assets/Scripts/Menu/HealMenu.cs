@@ -24,15 +24,21 @@ public class HealMenu : MonoBehaviour
     void Start()
     {
         abilities = inventory.abilities;
-        foreach (Heal heal in abilities)
+        foreach (Ability ability in abilities)
         {
-            GameObject newButton = Instantiate(buttonPrefab, buttonParent);
-            newButton.GetComponentInChildren<Image>().sprite = heal.icon;
+            if (ability is Heal heal)
+            {
+                
+                    GameObject newButton = Instantiate(buttonPrefab, buttonParent);
+                newButton.transform.Find("AbilityIcon").GetComponent<Image>().sprite = heal.icon;
 
-           
-            newButton.GetComponent<Button>().onClick.AddListener(() => OnButtonClicked(heal));
 
+                newButton.GetComponent<Button>().onClick.AddListener(() => OnButtonClicked(heal));
+
+                
+            }
         }
+        
 
     }
 

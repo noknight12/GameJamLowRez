@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29f596136de815944bd785e110c93d23, type: 3}
   m_Name: BasicDef
   m_EditorClassIdentifier: 
-  stat: 0
+  stat: 40
   abilityName: 
-  clip: {fileID: 0}
-  button: {fileID: 0}
-  icon: {fileID: 0}
-  countDown: 0
+  animName: 
+  icon: {fileID: 21300000, guid: fa93ce60697b94043981ca86af256034, type: 3}
+  countDown: 3

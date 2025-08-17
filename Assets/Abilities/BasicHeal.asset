@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e94e1eb366158942a207825da8a4a84, type: 3}
   m_Name: BasicHeal
   m_EditorClassIdentifier: 
-  stat: 0
-  abilityName: 
-  clip: {fileID: 0}
-  button: {fileID: 0}
-  icon: {fileID: 0}
+  stat: 30
+  abilityName: heal
+  animName: heal
+  icon: {fileID: 21300000, guid: cd9d2ab5353231d45b7a0ef805deecbe, type: 3}

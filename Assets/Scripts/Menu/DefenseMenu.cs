@@ -1,5 +1,5 @@
+using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,15 +25,18 @@ public class DefenseMenu : MonoBehaviour
     void Start()
     {
         abilities = inventory.abilities;
-        foreach (Defense defense in abilities)
+        foreach (Ability ability in abilities)
         {
-            GameObject newButton = Instantiate(buttonPrefab, buttonParent);
-            newButton.GetComponentInChildren<Image>().sprite = defense.icon;
-
-            // Optional: Add click event
-            newButton.GetComponent<Button>().onClick.AddListener(() => OnButtonClicked(defense));
-
+            if (ability is Defense defense)
+            {
+                GameObject newButton = Instantiate(buttonPrefab, buttonParent);
+               
+                newButton.transform.Find("AbilityIcon").GetComponent<Image>().sprite = defense.icon;
+                // Optional: Add click event
+                newButton.GetComponent<Button>().onClick.AddListener(() => OnButtonClicked(defense));
+            }
         }
+       
 
     }
 
