@@ -43,7 +43,7 @@ public class TurnManager : MonoBehaviour
     public List<EnemyTemplate> enemyTemplates = new List<EnemyTemplate>();
     void Start()
     {
-        Screen.SetResolution(64, 64, FullScreenMode.FullScreenWindow);
+        
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
         foreach (GameObject enemy in enemies)
