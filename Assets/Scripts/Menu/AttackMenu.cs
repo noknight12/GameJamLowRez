@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Net.Mail;
 using TMPro;
@@ -29,15 +30,20 @@ public class AttackMenu : MonoBehaviour
     void Start()
     {
         abilities = inventory.abilities;
-        foreach (Attack attack in abilities) 
+        foreach (Ability ability in abilities)
         {
-            GameObject newButton = Instantiate(buttonPrefab, buttonParent);
-            newButton.transform.Find("AbilityIcon").GetComponent<Image>().sprite = attack.icon;
+            if (ability is Attack attack)
+            {
 
-            // Optional: Add click event
-            newButton.GetComponent<Button>().onClick.AddListener(() => OnButtonClicked(attack));
+                GameObject newButton = Instantiate(buttonPrefab, buttonParent);
+                newButton.transform.Find("AbilityIcon").GetComponent<Image>().sprite = attack.icon;
 
+                // Optional: Add click event
+                newButton.GetComponent<Button>().onClick.AddListener(() => OnButtonClicked(attack));
+
+            }
         }
+       
 
     }
 

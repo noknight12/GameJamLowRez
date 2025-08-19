@@ -5,8 +5,9 @@ public class DoHeal : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [SerializeField]
     PlayerHealth health;
+    [SerializeField]
+    TurnManager turnManager;
 
- 
 
     private ApplyBuff applyBuff;
 
@@ -15,5 +16,7 @@ public class DoHeal : MonoBehaviour
     {
         applyBuff = GetComponent<ApplyBuff>();
         health.health += applyBuff.Apply(heal);
+        health.healthBar.SetHealth(health.health);
+        turnManager.PrepToBattle();
     }
 }

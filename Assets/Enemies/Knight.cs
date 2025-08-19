@@ -18,25 +18,25 @@ public class Knight : EnemyTemplate
     Animator anim;
     public override void Attack()
     {
-        int randAttack = Random.Range(0, 3);
+        int randAttack = Random.Range(0, 2);
         Debug.Log("it works :D");
         anim.Play("KnightComboOne");
-        /*
+        
         switch (randAttack)
         { 
             case 0:
-                anim.Play("ComboOne");
+                anim.Play("KnightComboOne");
             break;
 
             case 1:
-                anim.Play("ComboTwo");
+                anim.Play("KnightComboTwo");
                 break;
 
             case 2:
                 anim.Play("ComboThree");
                 break;
         }
-        */
+        
 
         //EndTurn();
     }
@@ -52,7 +52,7 @@ public class Knight : EnemyTemplate
    }
    public void SpawnGoblin()
    {
-       Instantiate(pierce, transform.position, Quaternion.identity);
+       Instantiate(goblin, transform.position, Quaternion.identity);
    }
 
 }

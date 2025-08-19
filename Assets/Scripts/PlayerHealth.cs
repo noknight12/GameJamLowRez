@@ -5,11 +5,15 @@ public class PlayerHealth : MonoBehaviour
     [HideInInspector]
     public float health = 100.0f;
     [SerializeField]
-    float maxHealth = 100.0f;
+    int maxHealth = 100;
     [SerializeField]
     public float defense = 0;
     [SerializeField]
     private GameObject Scene;
+    [SerializeField]
+    private GameObject GameOverScreen;
+    public HealthBar healthBar;
+        
 
     public int baseDef = 0;
 
@@ -19,6 +23,7 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         health = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     // Update is called once per frame
@@ -26,9 +31,10 @@ public class PlayerHealth : MonoBehaviour
     {
         if (health < 0)
         {
-           
-            Scene.SetActive(false);
             Debug.Log("dead");
+            GameOverScreen.SetActive(true);
+            Scene.SetActive(false);
+            
         }
         else if (health > maxHealth)
         {
@@ -42,6 +48,7 @@ public class PlayerHealth : MonoBehaviour
         defPercent = 1 - defPercent;
         float resultDmg =  damage * defPercent;
         health -= resultDmg;
+        healthBar.SetHealth(health);
         defenseCountDown--;
         if (defenseCountDown <= 0)
         {
